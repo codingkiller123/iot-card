@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.xdm</groupId>
+        <artifactId>xdm</artifactId>
+        <version>3.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <modules>
+        <module>xdm-common-log</module>
+        <module>xdm-common-core</module>
+        <module>xdm-common-redis</module>
+        <module>xdm-common-swagger</module>
+        <module>xdm-common-security</module>
+        <module>xdm-common-datascope</module>
+        <module>xdm-common-datasource</module>
+    </modules>
+
+    <artifactId>xdm-common</artifactId>
+    <packaging>pom</packaging>
+
+    <description>
+        xdm-common通用模块
+    </description>
+
+</project>
