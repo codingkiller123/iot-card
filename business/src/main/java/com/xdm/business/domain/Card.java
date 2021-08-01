@@ -1,5 +1,6 @@
 package com.xdm.business.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.xdm.common.core.web.domain.BaseEntity;
 import io.swagger.models.auth.In;
 
@@ -51,11 +52,13 @@ public class Card extends BaseEntity {
     /**
      * 激活时间
      */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date activationTime;
 
     /**
      * 失效时间
      */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date overTime;
 
     /**
@@ -91,19 +94,7 @@ public class Card extends BaseEntity {
      */
     private Integer status;
 
-    private String onlineStateInfo;
-
-    private String stateChangeHistory;
-
-    private String imeiInfo;
-
-    private String apnInfo;
-
     private List<CardOrder> cardOrderedPackageVOList = new ArrayList<>();
-
-    private OnlineStateInfo onlineStateInfoVO;
-
-    private StateChangeHistory stateChangeHistoryVO;
 
     public String getIccid() {
         return iccid;
@@ -119,6 +110,22 @@ public class Card extends BaseEntity {
 
     public void setMsisdn(String msisdn) {
         this.msisdn = msisdn;
+    }
+
+    public String getImsi() {
+        return imsi;
+    }
+
+    public void setImsi(String imsi) {
+        this.imsi = imsi;
+    }
+
+    public String getImei() {
+        return imei;
+    }
+
+    public void setImei(String imei) {
+        this.imei = imei;
     }
 
     public Double getFlowTotal() {
@@ -143,30 +150,6 @@ public class Card extends BaseEntity {
 
     public void setFlowLeft(Double flowLeft) {
         this.flowLeft = flowLeft;
-    }
-
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
-
-    public String getImsi() {
-        return imsi;
-    }
-
-    public void setImsi(String imsi) {
-        this.imsi = imsi;
-    }
-
-    public String getImei() {
-        return imei;
-    }
-
-    public void setImei(String imei) {
-        this.imei = imei;
     }
 
     public Date getActivationTime() {
@@ -217,36 +200,12 @@ public class Card extends BaseEntity {
         this.systemPoolId = systemPoolId;
     }
 
-    public String getOnlineStateInfo() {
-        return onlineStateInfo;
+    public Integer getStatus() {
+        return status;
     }
 
-    public void setOnlineStateInfo(String onlineStateInfo) {
-        this.onlineStateInfo = onlineStateInfo;
-    }
-
-    public String getStateChangeHistory() {
-        return stateChangeHistory;
-    }
-
-    public void setStateChangeHistory(String stateChangeHistory) {
-        this.stateChangeHistory = stateChangeHistory;
-    }
-
-    public String getImeiInfo() {
-        return imeiInfo;
-    }
-
-    public void setImeiInfo(String imeiInfo) {
-        this.imeiInfo = imeiInfo;
-    }
-
-    public String getApnInfo() {
-        return apnInfo;
-    }
-
-    public void setApnInfo(String apnInfo) {
-        this.apnInfo = apnInfo;
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 
     public List<CardOrder> getCardOrderedPackageVOList() {
@@ -255,22 +214,6 @@ public class Card extends BaseEntity {
 
     public void setCardOrderedPackageVOList(List<CardOrder> cardOrderedPackageVOList) {
         this.cardOrderedPackageVOList = cardOrderedPackageVOList;
-    }
-
-    public OnlineStateInfo getOnlineStateInfoVO() {
-        return onlineStateInfoVO;
-    }
-
-    public void setOnlineStateInfoVO(OnlineStateInfo onlineStateInfoVO) {
-        this.onlineStateInfoVO = onlineStateInfoVO;
-    }
-
-    public StateChangeHistory getStateChangeHistoryVO() {
-        return stateChangeHistoryVO;
-    }
-
-    public void setStateChangeHistoryVO(StateChangeHistory stateChangeHistoryVO) {
-        this.stateChangeHistoryVO = stateChangeHistoryVO;
     }
 
     @Override

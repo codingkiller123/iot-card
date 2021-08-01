@@ -1,5 +1,7 @@
 package com.xdm.business.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class CardOrder {
@@ -17,11 +19,13 @@ public class CardOrder {
     /**
      *生效时间
      */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date itemEffectiveTime;
 
     /**
      *失效时间
      */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date itemOverTime;
 
     private String basePricing;
